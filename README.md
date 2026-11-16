@@ -1,30 +1,37 @@
-# Node.js Backend
+# DevOps Practice
 
-A minimal Express backend with JSON parsing, a root endpoint, and a health check.
+This repository contains separate frontend and backend applications:
 
-## Setup
+- `frontend/` — React application powered by Vite.
+- `backend/` — Express API.
+
+## Backend
+
+In a terminal:
 
 ```bash
+cd backend
 npm install
-```
-
-## Run
-
-Start the server:
-
-```bash
-npm start
-```
-
-Run with automatic restarts during development:
-
-```bash
 npm run dev
 ```
 
-The server listens on port `3000` by default. Set the `PORT` environment variable to use a different port.
+The API listens on port `3000` by default. Set the `PORT` environment variable to use a different port.
 
-## Endpoints
+Endpoints:
 
 - `GET /` — Returns a welcome message.
 - `GET /health` — Returns `{ "status": "ok" }`.
+
+## Frontend
+
+In a separate terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the Vite URL shown in the terminal (usually `http://localhost:5173`). The frontend's `/health` requests are proxied to the backend, so start the backend as well to see its status.
+
+For a production frontend build, run `npm run build` from `frontend/`.
